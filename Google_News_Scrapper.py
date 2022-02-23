@@ -1,7 +1,7 @@
 from GoogleNews import GoogleNews
 
 
-class Scrape_Articles():
+class ScrapeArticles():
 
     def __init__(self, ticker, start_date, end_date):
         self.company_ticker = ticker
@@ -29,6 +29,6 @@ class Scrape_Articles():
         return urls, result
 
 # To test if the program works
-news = Scrape_Articles('NVDA', '08/01/2021', '8/16/2021')
-print('URLS for Articles on NVIDA', news.search_articles()[0])
-print('Results for Articles on NVIDA', news.search_articles()[1])
+# news = ScrapeArticles('NVDA', '08/01/2021', '8/16/2021')
+# print('URLS for Articles on NVIDA', news.search_articles()[0])
+# print('Results for Articles on NVIDA', news.search_articles()[1])
