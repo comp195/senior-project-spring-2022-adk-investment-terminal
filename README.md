@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal">
-    <img src="logo.png" alt="Logo" width="350" height="350">
+    <img src="Design Documents/logo.png" alt="Logo" width="350" height="350">
   </a>
 
   <h3 align="center"> ADK FINANCIAL SERVICES </h3>
@@ -13,24 +13,6 @@
     <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal">View Source Code</a>
   </p>
 </div>
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#project-description">Project Description</a>
-      <ul>
-        <li><a href="#project-components">Project Components</a></li>
-      </ul>
-    </li>
-    <li><a href="#how-are-we-doing-it">How are we doing it?</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contacts">Contacts</a></li>
-    <li><a href="#references">References</a></li>
-  </ol>
-</details>
 
 ## Project Description
 
@@ -67,7 +49,7 @@ It is implemented as more than 35 extension modules and enables Python to be use
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Our Roadmap
+## Our Progress
 
 - [x] Coded a web scrapper that scrapes articles from google news
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
@@ -98,7 +80,6 @@ Distributed under the MIT License. See `license.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
 ## References Used
 
 * [MIT License](https://opensource.org/licenses/MIT)
