@@ -14,6 +14,24 @@
   </p>
 </div>
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#project-description">Project Description</a>
+      <ul>
+        <li><a href="#project-components">Project Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-are-we-doing-it">How are we doing it?</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contacts">Contacts</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</details>
+
 ## Project Description
 
 Due to the fact that our team chose to recreate the well-established, classic terminal of trading, it would make sense to review the essential features that will make this Stock Terminal so useful to the users.
@@ -24,7 +42,7 @@ By reviewing the overall trading system and the latest news in the market, we wi
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Project Components
+### Project Components
 
 This section includes all major components and frameworks/libraries we will use.
 * Front End - The front end consists of what the user sees and interacts with. Our front end will consist of the PyQt5 library in Python3. Therefore, Python will be the only main language used to complete the application.
@@ -33,14 +51,14 @@ This section includes all major components and frameworks/libraries we will use.
 * [Python](https://www.python.org)
 * [Python Pendulum Module](https://pypi.org/project/pendulum/)
 * [PyQt Library](https://pypi.org/project/PyQt5/)
-* [MatPlotLib](https://matplotlib.org)
+* [Matlibplot Library](https://matplotlib.org)
 * [newspaper Library](https://pypi.org/project/newspaper/)
 * [GoogleNews Library](https://pypi.org/project/GoogleNews/)
 * [Textblob Library](https://pypi.org/project/textblob/0.9.0/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### How are we doing it?
+## How are we doing it?
 
 We are using Yahoo Finance to scrap our data for the stock terminal to provide us with the latest financial news, data and commentary including stock quotes, press releases, financial reports, and original content. 
 In addition to posting partner content from other web sites, it posts original stories by its team of staff journalists.
@@ -49,7 +67,7 @@ It is implemented as more than 35 extension modules and enables Python to be use
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Roadmap
+## Our Roadmap
 
 - [x] Coded a web scrapper that scrapes articles from google news
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
@@ -66,13 +84,13 @@ See the [open issues](https://github.com/comp195/senior-project-spring-2022-adk-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### License
+## License
 
 Distributed under the MIT License. See `license.txt` for more information. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Contacts
+## Contacts
 
 * [Antonio Barrios](https://www.linkedin.com/in/abarrioscomputersci/) - a_barrios5@u.pacific.edu
 * [Kunal Babbar](https://www.linkedin.com/in/kunalbabbar1/) - k_babbar@u.pacific.edu
@@ -80,7 +98,8 @@ Distributed under the MIT License. See `license.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### References Used
+<!-- ACKNOWLEDGMENTS -->
+## References Used
 
 * [MIT License](https://opensource.org/licenses/MIT)
 * [GitHub Pages](https://pages.github.com)
