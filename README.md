@@ -27,7 +27,7 @@
     <li><a href="#how-are-we-doing-it">How are we doing it?</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contacts</a></li>
+    <li><a href="#contacts">Contacts</a></li>
     <li><a href="#references">References</a></li>
   </ol>
 </details>
