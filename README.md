@@ -33,7 +33,7 @@ This section includes all major components and frameworks/libraries we will use.
 * [Python](https://www.python.org)
 * [Python Pendulum Module](https://pypi.org/project/pendulum/)
 * [PyQt Library](https://pypi.org/project/PyQt5/)
-* [Matlibplot Library](https://matplotlib.org)
+* [MatPlotLib](https://matplotlib.org)
 * [newspaper Library](https://pypi.org/project/newspaper/)
 * [GoogleNews Library](https://pypi.org/project/GoogleNews/)
 * [Textblob Library](https://pypi.org/project/textblob/0.9.0/)
