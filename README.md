@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="350" height="350">
   </a>
 
   <h3 align="center"> ADK FINANCIAL SERVICES </h3>
