@@ -14,24 +14,6 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#project-description">Project Description</a>
-      <ul>
-        <li><a href="#project-components">Project Components</a></li>
-      </ul>
-    </li>
-    <li><a href="#how-are-we-doing-it">How are we doing it?</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contacts">Contacts</a></li>
-    <li><a href="#references">References</a></li>
-  </ol>
-</details>
-
 ## Project Description
 
 Due to the fact that our team chose to recreate the well-established, classic terminal of trading, it would make sense to review the essential features that will make this Stock Terminal so useful to the users.
@@ -67,7 +49,7 @@ It is implemented as more than 35 extension modules and enables Python to be use
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Our Roadmap
+## Roadmap
 
 - [x] Coded a web scrapper that scrapes articles from google news
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
@@ -98,7 +80,6 @@ Distributed under the MIT License. See `license.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
 ## References Used
 
 * [MIT License](https://opensource.org/licenses/MIT)
