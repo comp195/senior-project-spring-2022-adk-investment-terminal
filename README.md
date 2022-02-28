@@ -10,7 +10,7 @@
   <p align="center">
     Welcome to our Investment Terminal!
     <br />
-    <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal">View Source Code</a>
+    <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/SentimentAnalysis.py">View Source Code</a>
   </p>
 </div>
 
