@@ -66,10 +66,10 @@ class SentimentAnalysis():
 # you can change the arguments below                   'ticker' Start_date    End_date
 company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '08/01/2021', '8/07/2021')
 sentiment = SentimentAnalysis()
-sentiment.lexical_article_analyze(company_articles.search_articles()[0])
+sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
 
-print('______________________________________________________________________________________________________')
-
-for i in range(len(sentiment.summary)):
-    print(sentiment.summary[i])
-    print('______________________________________________________________________________________________________')
+# print('______________________________________________________________________________________________________')
+#
+# for i in range(len(sentiment.summary)):
+#     print(sentiment.summary[i])
+#     print('______________________________________________________________________________________________________')
