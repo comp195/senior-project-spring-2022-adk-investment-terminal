@@ -15,7 +15,11 @@ import Google_News_Scrapper
 import HeatMap
 from SentimentAnalysis import SentimentAnalysis
 
+
 class Ui_Widget(object):
+    def __int__(self):
+        self.company_articles = Google_News_Scrapper.ScrapeArticles('', '08/01/2021', '8/07/2021')
+
     def setupUi(self, Widget):
         Widget.setObjectName("Widget")
         Widget.resize(800, 600)
@@ -55,9 +59,8 @@ class Ui_Widget(object):
         self.pushButton_3.clicked.connect(self.summary)
 
     def edit_line(self):
-        # print(self.lineEdit.text())
         enter_ticker = self.lineEdit.text()
-        self.summary(enter_ticker)
+        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '08/01/2021', '8/07/2021')
 
     @classmethod
     def show_stats(cls):
@@ -68,9 +71,8 @@ class Ui_Widget(object):
         heat = HeatMap.show_heat_map()
 
     def summary(self, ticker):
-        company_articles = Google_News_Scrapper.ScrapeArticles(ticker, '08/01/2021', '8/07/2021')
         sentiment = SentimentAnalysis()
-        sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
+        sentiment.lexical_article_analyze(self.company_articles.search_articles()[0][0:5])
         self.textEdit.clear()
         self.textEdit.insertPlainText(sentiment.summary[1])
         print("34")
