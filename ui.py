@@ -9,13 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLineEdit
 
 import Google_News_Scrapper
+import HeatMap
 from SentimentAnalysis import SentimentAnalysis
-
-company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '08/01/2021', '8/07/2021')
-sentiment = SentimentAnalysis()
-sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -51,26 +49,36 @@ class Ui_Widget(object):
         self.pushButton_3.setText(_translate("Widget", "SUMMARY"))
         self.label.setText(_translate("Widget", "ENTER TICKER"))
 
-
+        self.lineEdit.editingFinished.connect(self.edit_line)
+        self.pushButton.clicked.connect(self.show_stats)
+        self.pushButton.clicked.connect(self.heat_map)
         self.pushButton_3.clicked.connect(self.summary)
 
-    # def enter_ticker(self, ticker_name):
-    #     company_articles = Google_News_Scrapper.ScrapeArticles(ticker_name, '08/01/2021', '8/07/2021')
-    #     sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
+    def edit_line(self):
+        # print(self.lineEdit.text())
+        enter_ticker = self.lineEdit.text()
+        self.summary(enter_ticker)
 
+    @classmethod
+    def show_stats(cls):
+        print("Stats")
 
-    def summary(self):
-        # company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '08/01/2021', '8/07/2021')
-        # sentiment = SentimentAnalysis()
-        # sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
+    @classmethod
+    def heat_map(cls):
+        heat = HeatMap.show_heat_map()
+
+    def summary(self, ticker):
+        company_articles = Google_News_Scrapper.ScrapeArticles(ticker, '08/01/2021', '8/07/2021')
+        sentiment = SentimentAnalysis()
+        sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
         self.textEdit.clear()
-        self.textEdit.insertPlainText(sentiment.summary[0])
+        self.textEdit.insertPlainText(sentiment.summary[1])
         print("34")
-        print(sentiment.summary[0])
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Widget = QtWidgets.QWidget()
     ui = Ui_Widget()
