@@ -55,9 +55,8 @@ It is implemented as more than 35 extension modules and enables Python to be use
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
 - [x] Updated Wiki Page
 - [x] Added a License
-- [x] GANTT Chart 
 - [x] Design GUI 
-- [x] GANTT Chart [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/Snapshot-2/ADK%20Gantt%20Chart%20PDF%20(Snapshot-2).pdf)
+- [x] Updated GANTT Chart [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/Snapshot-2/ADK%20Gantt%20Chart%20PDF%20(Snapshot-2).pdf)
 - [x] Designed Basic GUI Layout[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/GUI-1.png)
 - [x] Included a Ticker Entry System
 - [x] Added Responsive buttons on the GUI
