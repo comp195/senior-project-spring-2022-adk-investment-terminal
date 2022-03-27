@@ -13,7 +13,8 @@ from PyQt5 import QtCore, QtWidgets
 import Google_News_Scrapper
 import HeatMap
 from SentimentAnalysis import SentimentAnalysis
-
+from StatisticalInformation import Stats
+stats = Stats()
 
 class Ui_Widget(object):
     def __int__(self):
@@ -71,7 +72,7 @@ class Ui_Widget(object):
         self.label.setText(_translate("Widget", "ENTER TICKER"))
 
         self.lineEdit.editingFinished.connect(self.edit_line)
-        self.pushButton.clicked.connect(self.show_stats)
+        self.pushButton_2.clicked.connect(self.show_stats)
         self.pushButton.clicked.connect(self.heat_map)
         self.pushButton_3.clicked.connect(self.summary)
 
@@ -84,6 +85,9 @@ class Ui_Widget(object):
     @classmethod
     def show_stats(cls):
         print("Stats")
+        values = stats.read_lines()
+        stats.pie_chart(values)
+
 
     # JUST a heat map bro
     @classmethod

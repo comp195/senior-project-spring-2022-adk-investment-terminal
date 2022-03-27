@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import numpy as np
 from nltk.sentiment import SentimentIntensityAnalyzer
 from newspaper import Config
 from newspaper import Article
@@ -6,11 +8,14 @@ import newspaper
 import nltk
 
 import Google_News_Scrapper
+from StatisticalInformation import Stats
 
 # nltk.download('vader_lexicon')
 # nltk.download('punkt')
 
 # company_articles = Google_News_Scrapper.ScrapeArticles()
+stats_clss = Stats()
+
 
 class SentimentAnalysis():
 
@@ -59,6 +64,39 @@ class SentimentAnalysis():
                     self.neutral_counter += 1
                     self.neutral_sentiment_list.append(sentence)
 
+    def basic_stats(self):
+        total_reviewed_sentences = (self.positive_counter + self.neutral_counter + self.negative_counter)
+        print(total_reviewed_sentences)
+
+    def show_histogram(self):
+        a = self.analysis_polarity
+        stats_clss.show_histogram(a)
+
+    def histogram(self):
+        a = np.array(self.analysis_polarity)
+        fig, ax = plt.subplots(figsize=(10, 7))
+        ax.hist(a, bins='auto')
+        plt.title("SENTIMENT")
+        plt.show()
+
+    def pie_chart(self):
+        data = [len(self.positive_sentiment_list), len(self.negative_sentiment_list), len(self.neutral_sentiment_list)]
+        stats_clss.pie_chart(data)
+
+    def store_sentiment_data(self):
+        data = [len(self.positive_sentiment_list), len(self.negative_sentiment_list), len(self.neutral_sentiment_list)]
+        with open('data.txt', 'w') as f:
+            for item in data:
+                f.write("%d\n" % item)
+
+    # def read_lines(self):
+    #     len_of_articles_list = []
+    #     file1 = open('Source/data.txt', 'r')
+    #     lines = file1.readlines()
+    #     count = 0
+    #     for line in lines:
+    #         count +=1
+
 
 # Takes some time to parse and compute the sentiment. will work on improving the speed
 # you can change the arguments below                   'ticker' Start_date    End_date
@@ -66,6 +104,13 @@ company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '08/01/2021', '8/
 sentiment = SentimentAnalysis()
 sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
 
+sentiment.store_sentiment_data()
+
+# sentiment.show_histogram()
+# sentiment.pie_chart()
+# sentiment.basic_stats()
+# sentiment.histogram()
+# sentiment.pie_chart()
 # print('______________________________________________________________________________________________________')
 #
 # for i in range(len(sentiment.summary)):
