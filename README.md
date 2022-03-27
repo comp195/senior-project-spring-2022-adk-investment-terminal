@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal">
-    <img src="Design Documents/logo.png" alt="Logo" width="350" height="350">
+    <img src="Design Documents/images/logo.png" alt="Logo" width="350" height="350">
   </a>
 
   <h3 align="center"> ADK FINANCIAL SERVICES </h3>
@@ -49,16 +49,23 @@ It is implemented as more than 35 extension modules and enables Python to be use
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Our Progress
+## Current Progress and Implemented Features
 
 - [x] Coded a web scrapper that scrapes articles from google news
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
 - [x] Updated Wiki Page
 - [x] Added a License
-- [x] GANTT Chart 
-- [ ] Design GUI 
+- [x] Design GUI 
+- [x] Updated GANTT Chart [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/Snapshot-2/ADK%20Gantt%20Chart%20PDF%20(Snapshot-2).pdf)
+- [x] Designed Basic GUI Layout[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/GUI-1.png)
+- [x] Included a Ticker Entry System
+- [x] Added Responsive buttons on the GUI
+- [x] Designed News Article Scrapper
+- [x] Designed YahooFinance Scrapper
+- [x] Designed Data Visualization Tools
+- [x] Designed a dummy file to test HeatMaps for the scrapped results[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/Dummy%20HeatMap.png) 
+- [x] Our Latest Wiki Page [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/wiki)
 - [ ] Link GUI to Scrapper
-- [ ] Enhance UI
 - [ ] Wrap Up
 - [ ] Code Cleanup
 

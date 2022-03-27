@@ -7,12 +7,10 @@ import nltk
 
 import Google_News_Scrapper
 
-
 # nltk.download('vader_lexicon')
 # nltk.download('punkt')
 
 # company_articles = Google_News_Scrapper.ScrapeArticles()
-
 
 class SentimentAnalysis():
 
