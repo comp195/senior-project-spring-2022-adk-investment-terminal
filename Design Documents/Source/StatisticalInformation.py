@@ -24,10 +24,10 @@ class Stats:
         # print(sentiment.get_analysis_polarity())
 
     def pie_chart(self, data):
-        # data = [len(self.positive_sentiment_list), len(self.negative_sentiment_list), len(self.neutral_sentiment_list)]
         Sentiment = ["Positive", "Negative", "Neutral"]
         fig = plt.figure(figsize=(10, 7))
         plt.pie(data, labels=Sentiment)
 
         # show plot
         plt.show()
+

@@ -89,13 +89,6 @@ class SentimentAnalysis():
             for item in data:
                 f.write("%d\n" % item)
 
-    # def read_lines(self):
-    #     len_of_articles_list = []
-    #     file1 = open('Source/data.txt', 'r')
-    #     lines = file1.readlines()
-    #     count = 0
-    #     for line in lines:
-    #         count +=1
 
 
 # Takes some time to parse and compute the sentiment. will work on improving the speed
