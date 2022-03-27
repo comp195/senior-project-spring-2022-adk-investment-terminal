@@ -42,6 +42,20 @@ class Ui_Widget(object):
         self.textEdit.setGeometry(QtCore.QRect(233, 130, 371, 161))
         self.textEdit.setObjectName("textEdit")
 
+        ############################################## RESIZE
+        self.pushButton.resize(150,50)
+        self.pushButton_2.resize(150,50)
+        self.pushButton_3.resize(150, 50)
+        self.label.resize(150,50)
+        self.textEdit.resize(349,250)
+        self.lineEdit.resize(350,25)
+        # self.label.adjustSize()
+        # self.pushButton.adjustSize()
+        # self.textEdit.adjustSize()
+        # self.pushButton.adjustSize()
+        # self.pushButton_2.adjustSize()
+        # self.pushButton_3.adjustSize()
+
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
 
