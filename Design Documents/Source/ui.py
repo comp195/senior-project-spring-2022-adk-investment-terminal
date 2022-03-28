@@ -15,6 +15,9 @@ import HeatMap
 from SentimentAnalysis import SentimentAnalysis
 from StatisticalInformation import Stats
 stats = Stats()
+import yfinance as yf
+import pendulum
+import matplotlib.pyplot as plt
 
 class Ui_Widget(object):
     def __int__(self):
@@ -28,18 +31,27 @@ class Ui_Widget(object):
         self.pushButton = QtWidgets.QPushButton(Widget)
         self.pushButton.setGeometry(QtCore.QRect(60, 220, 75, 21))
         self.pushButton.setObjectName("pushButton")
+
         self.pushButton_2 = QtWidgets.QPushButton(Widget)
         self.pushButton_2.setGeometry(QtCore.QRect(60, 170, 75, 23))
         self.pushButton_2.setObjectName("pushButton_2")
+
         self.pushButton_3 = QtWidgets.QPushButton(Widget)
         self.pushButton_3.setGeometry(QtCore.QRect(60, 270, 75, 23))
         self.pushButton_3.setObjectName("pushButton_3")
+
+        self.pushButton_4 = QtWidgets.QPushButton(Widget)
+        self.pushButton_4.setGeometry(QtCore.QRect(60, 320, 75, 21))
+        self.pushButton_4.setObjectName("pushButton_4")
+
         self.lineEdit = QtWidgets.QLineEdit(Widget)
         self.lineEdit.setGeometry(QtCore.QRect(230, 100, 381, 20))
         self.lineEdit.setObjectName("lineEdit")
+
         self.label = QtWidgets.QLabel(Widget)
         self.label.setGeometry(QtCore.QRect(60, 80, 91, 61))
         self.label.setObjectName("label")
+
         self.textEdit = QtWidgets.QTextEdit(Widget)
         self.textEdit.setGeometry(QtCore.QRect(233, 130, 371, 161))
         self.textEdit.setObjectName("textEdit")
@@ -48,6 +60,7 @@ class Ui_Widget(object):
         self.pushButton.resize(150,50)
         self.pushButton_2.resize(150,50)
         self.pushButton_3.resize(150, 50)
+        self.pushButton_4.resize(150, 50)
         self.label.resize(150,50)
         self.textEdit.resize(349,250)
         self.lineEdit.resize(350,25)
@@ -67,14 +80,17 @@ class Ui_Widget(object):
         _translate = QtCore.QCoreApplication.translate
         Widget.setWindowTitle(_translate("Widget", "ADK TERMINAL"))
         self.pushButton.setText(_translate("Widget", "HEAT MAP"))
-        self.pushButton_2.setText(_translate("Widget", "DATA"))
+        self.pushButton_2.setText(_translate("Widget", "STOCK PRICE"))
         self.pushButton_3.setText(_translate("Widget", "SUMMARY"))
+        self.pushButton_4.setText(_translate("Widget", "Pie Chart"))
+
         self.label.setText(_translate("Widget", "ENTER TICKER"))
 
         self.lineEdit.editingFinished.connect(self.edit_line)
-        self.pushButton_2.clicked.connect(self.show_stats)
+        self.pushButton_2.clicked.connect(self.show_stock)
         self.pushButton.clicked.connect(self.heat_map)
         self.pushButton_3.clicked.connect(self.summary)
+        self.pushButton_4.clicked.connect(self.show_pie_chart)
 
     # This allows the user to enter a company ticker into the lineEdit box, which then is passed into the Scraper.
     def edit_line(self):
@@ -82,12 +98,21 @@ class Ui_Widget(object):
         self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '08/01/2021', '8/07/2021')
 
     # Will eventually call and display stats info about each company we research
-    @classmethod
-    def show_stats(cls):
-        print("Stats")
+    def show_stock(self):
+        enter_ticker = self.lineEdit.text()
+        price_history = yf.Ticker(enter_ticker).history(period='2y',  # valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
+                                                  interval='1wk',
+                                                  # valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
+                                                  actions=False)
+        time_series = list(price_history['Open'])
+        dt_list = [pendulum.parse(str(dt)).float_timestamp for dt in list(price_history.index)]
+        plt.style.use('dark_background')
+        plt.plot(dt_list, time_series, linewidth=2)
+        plt.show()
+
+    def show_pie_chart(cls):
         values = stats.read_lines()
         stats.pie_chart(values)
-
 
     # JUST a heat map bro
     @classmethod
