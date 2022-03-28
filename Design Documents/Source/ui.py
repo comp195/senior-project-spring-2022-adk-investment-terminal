@@ -14,10 +14,12 @@ import Google_News_Scrapper
 import HeatMap
 from SentimentAnalysis import SentimentAnalysis
 from StatisticalInformation import Stats
-stats = Stats()
 import yfinance as yf
 import pendulum
 import matplotlib.pyplot as plt
+
+stats = Stats()
+
 
 class Ui_Widget(object):
     def __int__(self):
@@ -57,13 +59,13 @@ class Ui_Widget(object):
         self.textEdit.setObjectName("textEdit")
 
         ############################################## RESIZE
-        self.pushButton.resize(150,50)
-        self.pushButton_2.resize(150,50)
+        self.pushButton.resize(150, 50)
+        self.pushButton_2.resize(150, 50)
         self.pushButton_3.resize(150, 50)
         self.pushButton_4.resize(150, 50)
-        self.label.resize(150,50)
-        self.textEdit.resize(349,250)
-        self.lineEdit.resize(350,25)
+        self.label.resize(150, 50)
+        self.textEdit.resize(349, 250)
+        self.lineEdit.resize(350, 25)
         # self.label.adjustSize()
         # self.pushButton.adjustSize()
         # self.textEdit.adjustSize()
@@ -95,15 +97,16 @@ class Ui_Widget(object):
     # This allows the user to enter a company ticker into the lineEdit box, which then is passed into the Scraper.
     def edit_line(self):
         enter_ticker = self.lineEdit.text()
-        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '08/01/2021', '8/07/2021')
+        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '03/28/2022', '8/07/2021')
 
     # Will eventually call and display stats info about each company we research
     def show_stock(self):
         enter_ticker = self.lineEdit.text()
-        price_history = yf.Ticker(enter_ticker).history(period='2y',  # valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
-                                                  interval='1wk',
-                                                  # valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
-                                                  actions=False)
+        price_history = yf.Ticker(enter_ticker).history(period='2y',
+                                                        # valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
+                                                        interval='1wk',
+                                                        # valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
+                                                        actions=False)
         time_series = list(price_history['Open'])
         dt_list = [pendulum.parse(str(dt)).float_timestamp for dt in list(price_history.index)]
         plt.style.use('dark_background')
@@ -123,6 +126,7 @@ class Ui_Widget(object):
     def summary(self, ticker):
         sentiment = SentimentAnalysis()
         sentiment.lexical_article_analyze(self.company_articles.search_articles()[0][0:5])
+        sentiment.store_sentiment_data()
         self.textEdit.clear()
         self.textEdit.insertPlainText(sentiment.summary[1])
         print("34")

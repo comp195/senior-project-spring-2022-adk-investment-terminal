@@ -26,7 +26,7 @@ class Stats:
     def pie_chart(self, data):
         Sentiment = ["Positive", "Negative", "Neutral"]
         fig = plt.figure(figsize=(10, 7))
-        plt.pie(data, labels=Sentiment)
+        plt.pie(data, labels=Sentiment, autopct='%1.1f%%', shadow=True, startangle=90)
 
         # show plot
         plt.show()
