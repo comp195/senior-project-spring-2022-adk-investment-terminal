@@ -65,7 +65,7 @@ It is implemented as more than 35 extension modules and enables Python to be use
 - [x] Designed Data Visualization Tools
 - [x] Designed a dummy file to test HeatMaps for the scrapped results[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/Dummy%20HeatMap.png) 
 - [x] Our Latest Wiki Page [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/wiki)
-- [ ] Link GUI to Scrapper
+- [x] Link GUI to Scrapper
 - [ ] Wrap Up
 - [ ] Code Cleanup
 
