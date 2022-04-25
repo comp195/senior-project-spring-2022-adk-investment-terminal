@@ -10,6 +10,8 @@ import nltk
 import Google_News_Scrapper
 from StatisticalInformation import Stats
 
+from datetime import date
+
 # nltk.download('vader_lexicon')
 # nltk.download('punkt')
 
@@ -17,7 +19,7 @@ from StatisticalInformation import Stats
 stats_clss = Stats()
 
 
-class SentimentAnalysis():
+class SentimentAnalysis:
 
     def __init__(self):
         self.positive_sentiment_list = []
@@ -47,6 +49,9 @@ class SentimentAnalysis():
         return analysis
 
     def lexical_article_analyze(self, loop):
+
+        print('7')
+
         for articles in loop:
             parsed_article = self.parse_articles(articles)
             analysis = self.analyze_sentence(parsed_article)
@@ -89,16 +94,17 @@ class SentimentAnalysis():
             for item in data:
                 f.write("%d\n" % item)
 
-
-
 # Takes some time to parse and compute the sentiment. will work on improving the speed
 # you can change the arguments below                   'ticker' Start_date    End_date
-company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '08/01/2021', '8/07/2021')
-sentiment = SentimentAnalysis()
-sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
-
-sentiment.store_sentiment_data()
-
+###########################################################################################
+# today = date.today()
+# print("Today's date:", today)
+# company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '04/05/2022', today)
+# sentiment = SentimentAnalysis()
+# sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
+#
+# sentiment.store_sentiment_data()
+#####################################################################################
 # sentiment.show_histogram()
 # sentiment.pie_chart()
 # sentiment.basic_stats()

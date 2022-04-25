@@ -1,7 +1,7 @@
 from GoogleNews import GoogleNews
 
 
-class ScrapeArticles():
+class ScrapeArticles:
 
     def __init__(self, ticker, start_date, end_date):
         self.company_ticker = ticker
@@ -15,6 +15,7 @@ class ScrapeArticles():
         return self.company_ticker
 
     def search_articles(self):
+        print('3')
         googlenews = GoogleNews()
         googlenews.set_time_range(self.start_date, self.end_date)
         googlenews.set_encode('utf-8')

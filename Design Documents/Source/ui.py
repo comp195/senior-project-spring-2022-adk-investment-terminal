@@ -17,13 +17,15 @@ from StatisticalInformation import Stats
 import yfinance as yf
 import pendulum
 import matplotlib.pyplot as plt
+from datetime import date
 
 stats = Stats()
 
 
 class Ui_Widget(object):
     def __int__(self):
-        self.company_articles = Google_News_Scrapper.ScrapeArticles('', '08/01/2021', '8/07/2021')
+        self.today = date.today()
+        self.company_articles = Google_News_Scrapper.ScrapeArticles('', '04/01/2022', self.today)
 
     # Formats and resizes the buttons and label on the application
     # DO NOT MESS WITH UNLESS YOU KNOW WHAT YOU'RE DOING!!!!!!!!!!
@@ -97,7 +99,8 @@ class Ui_Widget(object):
     # This allows the user to enter a company ticker into the lineEdit box, which then is passed into the Scraper.
     def edit_line(self):
         enter_ticker = self.lineEdit.text()
-        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '03/28/2022', '8/07/2021')
+        print("4")
+        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '04/01/2022', '04/13/2022')
 
     # Will eventually call and display stats info about each company we research
     def show_stock(self):
@@ -125,11 +128,13 @@ class Ui_Widget(object):
     # When summary button is clicked it will call the first article that is in the list and display it to the user
     def summary(self, ticker):
         sentiment = SentimentAnalysis()
+        print("1")
         sentiment.lexical_article_analyze(self.company_articles.search_articles()[0][0:5])
+        print("2")
         sentiment.store_sentiment_data()
         self.textEdit.clear()
         self.textEdit.insertPlainText(sentiment.summary[1])
-        print("34")
+
 
 
 if __name__ == "__main__":
