@@ -1,5 +1,4 @@
 import TickerScrape
-import yfinance as yf
 # show analysts recommendations
 
 print('\nAnalyst Recommendations')
