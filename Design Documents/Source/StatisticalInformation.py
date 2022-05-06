@@ -1,5 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as plt
+import pandas as pd
+import yfinance as yf
 
 
 class Stats:
@@ -30,4 +32,29 @@ class Stats:
 
         # show plot
         plt.show()
+
+#     def time_series(self):
+#        # enter_ticker = self.lineEdit.text()
+#         price_history = yf.Ticker('UCTT').history(period='2y',
+#                                                         # valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
+#                                                         interval='1wk',
+#                                                         # valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
+#                                                         actions=False)
+#         time_series = list(price_history['Open'])
+#         df = pd.read_csv(,
+#                          parse_dates=True,
+#                          index_col="Date")
+#
+#         # displaying the first five rows of dataset
+#         df.head()
+#
+#         df['Volume'].plot()
+#
+#         df.plot(subplots=True, figsize=(10, 12))
+#         df.show()
+#
+# s = Stats()
+#
+# s.time_series()
+
 

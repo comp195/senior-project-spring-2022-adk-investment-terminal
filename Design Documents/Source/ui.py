@@ -48,6 +48,10 @@ class Ui_Widget(object):
         self.pushButton_4.setGeometry(QtCore.QRect(60, 320, 75, 21))
         self.pushButton_4.setObjectName("pushButton_4")
 
+        self.pushButton_5 = QtWidgets.QPushButton(Widget)
+        self.pushButton_5.setGeometry(QtCore.QRect(60, 370, 75, 21))
+        self.pushButton_5.setObjectName("pushButton_5")
+
         self.lineEdit = QtWidgets.QLineEdit(Widget)
         self.lineEdit.setGeometry(QtCore.QRect(230, 100, 381, 20))
         self.lineEdit.setObjectName("lineEdit")
@@ -65,6 +69,7 @@ class Ui_Widget(object):
         self.pushButton_2.resize(150, 50)
         self.pushButton_3.resize(150, 50)
         self.pushButton_4.resize(150, 50)
+        self.pushButton_5.resize(150, 50)
         self.label.resize(150, 50)
         self.textEdit.resize(349, 250)
         self.lineEdit.resize(350, 25)
@@ -87,6 +92,7 @@ class Ui_Widget(object):
         self.pushButton_2.setText(_translate("Widget", "STOCK PRICE"))
         self.pushButton_3.setText(_translate("Widget", "SUMMARY"))
         self.pushButton_4.setText(_translate("Widget", "Pie Chart"))
+        self.pushButton_5.setText(_translate("Widget", "Company Info"))
 
         self.label.setText(_translate("Widget", "ENTER TICKER"))
 
@@ -95,12 +101,12 @@ class Ui_Widget(object):
         self.pushButton.clicked.connect(self.heat_map)
         self.pushButton_3.clicked.connect(self.summary)
         self.pushButton_4.clicked.connect(self.show_pie_chart)
+        self.pushButton_5.clicked.connect(self.show_company_info)
 
     # This allows the user to enter a company ticker into the lineEdit box, which then is passed into the Scraper.
     def edit_line(self):
         enter_ticker = self.lineEdit.text()
-        print("4")
-        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '04/01/2022', '04/13/2022')
+        self.company_articles = Google_News_Scrapper.ScrapeArticles(enter_ticker, '04/01/2022', '04/25/2022')
 
     # Will eventually call and display stats info about each company we research
     def show_stock(self):
@@ -128,14 +134,45 @@ class Ui_Widget(object):
     # When summary button is clicked it will call the first article that is in the list and display it to the user
     def summary(self, ticker):
         sentiment = SentimentAnalysis()
-        print("1")
         sentiment.lexical_article_analyze(self.company_articles.search_articles()[0][0:5])
-        print("2")
         sentiment.store_sentiment_data()
         self.textEdit.clear()
         self.textEdit.insertPlainText(sentiment.summary[1])
 
+    def show_company_info(self, ticker):
+        Company = self.lineEdit.text()
+        Ticker = yf.Ticker(Company)
 
+        # print(Ticker.info.keys())
+
+        print('\nCompany Information')
+        print('-------------------')
+        print('Company Sector: ', Ticker.info['sector'], file=open("output.txt", "a"))
+        print('Market CAP: ', Ticker.info['marketCap'], file=open("output.txt", "a"))
+
+
+        print('\nPrice Changes')
+        print('---------------')
+        print('Market Open Price: ', Ticker.info['regularMarketOpen'], file=open("output.txt", "a"))
+
+        print('Previous Close Price: ', Ticker.info['previousClose'], file=open("output.txt", "a"))
+        print('52 Week Change in Price: ', Ticker.info['52WeekChange'], file=open("output.txt", "a"))
+        print('Target Low Price: ', Ticker.info['targetLowPrice'], file=open("output.txt", "a"))
+        print('Target Median Price: ', Ticker.info['targetMedianPrice'], file=open("output.txt", "a"))
+        print('Target High Price: ', Ticker.info['targetHighPrice'], file=open("output.txt", "a"))
+
+        print('\nPerformance Outlook', file=open("output.txt", "a"))
+        print('---------------------', file=open("output.txt", "a"))
+        print('3-Year Beta: ', Ticker.info['beta3Year'], file=open("output.txt", "a"))
+        print('Current Beta: ', Ticker.info['beta'], file=open("output.txt", "a"))
+        print('Short Ratio: ', Ticker.info['shortRatio'], file=open("output.txt", "a"))
+        print('PEG Ratio: ', Ticker.info['pegRatio'], file=open("output.txt", "a"))
+        print('YTD Return: ', Ticker.info['ytdReturn'], file=open("output.txt", "a"))
+        print('Forward P/E: ', Ticker.info['forwardPE'], file=open("output.txt", "a"))
+        print('Trailing P/E: ', Ticker.info['trailingPE'], file=open("output.txt", "a"))
+        file1 = open("output.txt", "r+")
+        self.textEdit.clear()
+        self.textEdit.insertPlainText(file1.read())
 
 if __name__ == "__main__":
     import sys

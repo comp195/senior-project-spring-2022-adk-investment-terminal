@@ -72,6 +72,7 @@ class SentimentAnalysis:
     def basic_stats(self):
         total_reviewed_sentences = (self.positive_counter + self.neutral_counter + self.negative_counter)
         print(total_reviewed_sentences)
+        print(self.negative_sentiment_list)
 
     def show_histogram(self):
         a = self.analysis_polarity
@@ -94,16 +95,23 @@ class SentimentAnalysis:
             for item in data:
                 f.write("%d\n" % item)
 
+    def store_sentiment_sentence(self):
+        with open('positiveSentence.txt', 'w') as f:
+            for item in self.positive_sentiment_list:
+                f.write("%s\n" % item)
+
 # Takes some time to parse and compute the sentiment. will work on improving the speed
 # you can change the arguments below                   'ticker' Start_date    End_date
-###########################################################################################
+##########################################################################################
 # today = date.today()
 # print("Today's date:", today)
 # company_articles = Google_News_Scrapper.ScrapeArticles('NVDA', '04/05/2022', today)
 # sentiment = SentimentAnalysis()
 # sentiment.lexical_article_analyze(company_articles.search_articles()[0][0:5])
-#
+# print(sentiment.positive_sentiment_list[1])
+# #
 # sentiment.store_sentiment_data()
+# sentiment.store_sentiment_sentence()
 #####################################################################################
 # sentiment.show_histogram()
 # sentiment.pie_chart()
