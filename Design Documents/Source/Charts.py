@@ -1,7 +1,7 @@
+import TickerScrape
 import yfinance as yf
-#df = yf.download("MSFT", start="2015-01-01", end="2021-03-31", interval="1d")
-#df.head()
-msft = yf.Ticker("MSFT")
+
+msft = TickerScrape.Ticker
 
 # get stock info
 #print(msft.info)

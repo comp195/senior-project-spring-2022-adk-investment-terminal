@@ -1,8 +1,9 @@
 import yfinance as yf
 
 Company = input("Enter in a Ticker: ")
-
+#Company.upper()
 Ticker = yf.Ticker(Company)
+
 #print(Ticker.info.keys())
 
 print('\nCompany Information')
