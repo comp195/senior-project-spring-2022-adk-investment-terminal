@@ -173,6 +173,7 @@ class Ui_Widget(object):
         file1 = open("output.txt", "r+")
         self.textEdit.clear()
         self.textEdit.insertPlainText(file1.read())
+        file1.truncate(0)
 
 if __name__ == "__main__":
     import sys
