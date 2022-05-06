@@ -1,7 +1,7 @@
 import yfinance as yf
 
 Company = input("Enter in a Ticker: ")
-
+#Company.upper()
 Ticker = yf.Ticker(Company)
 
 #print(Ticker.info.keys())
@@ -24,12 +24,26 @@ print('\nPerformance Outlook')
 print('---------------------')
 print('Ebitda: ',Ticker.info['ebitda'])
 print('Ebitda Margins: ',Ticker.info['ebitdaMargins'])
-print('Debt to Equity: ',Ticker.info['debtToEquity'])
 print('3-Year Beta: ',Ticker.info['beta3Year'])
 print('Current Beta: ',Ticker.info['beta'])
 print('Short Ratio: ',Ticker.info['shortRatio'])
-print('Quick Ratio: ',Ticker.info['quickRatio'])
+
+beta = Ticker.info['beta']
 print('PEG Ratio: ',Ticker.info['pegRatio'])
 print('YTD Return: ',Ticker.info['ytdReturn'])
 print('Forward P/E: ',Ticker.info['forwardPE'])
 print('Trailing P/E: ',Ticker.info['trailingPE'])
+
+print('\nLong-Term Solvency Ratios')
+print('---------------------------')
+print('Debt to Equity: ',Ticker.info['debtToEquity'])
+d2e= Ticker.info['debtToEquity']
+print('PEG Ratio: ',Ticker.info['pegRatio'])
+peg= Ticker.info['pegRatio']
+
+print('\nShort-Term Solvency Ratios')
+print('----------------------------')
+print('Current Ratio: ',Ticker.info['currentRatio'])
+current = Ticker.info['currentRatio']
+print('Quick Ratio: ',Ticker.info['quickRatio'])
+quick = Ticker.info['quickRatio']
