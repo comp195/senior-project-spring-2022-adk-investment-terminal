@@ -40,7 +40,7 @@ This section includes all major components and frameworks/libraries we will use.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## How are we doing it?
+## How did we do it?
 
 We are using Yahoo Finance to scrap our data for the stock terminal to provide us with the latest financial news, data and commentary including stock quotes, press releases, financial reports, and original content. 
 In addition to posting partner content from other web sites, it posts original stories by its team of staff journalists.
@@ -49,27 +49,22 @@ It is implemented as more than 35 extension modules and enables Python to be use
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Current Progress and Implemented Features
+## Implemented Features
 
 - [x] Coded a web scrapper that scrapes articles from google news
 - [x] Pass articles into sentiment analyzer that computes the sentiment of each company article 
 - [x] Updated Wiki Page
 - [x] Added a License
 - [x] Design GUI 
-- [x] Updated GANTT Chart [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/Snapshot-2/ADK%20Gantt%20Chart%20PDF%20(Snapshot-2).pdf)
 - [x] Designed Basic GUI Layout[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/GUI-1.png)
 - [x] Included a Ticker Entry System
 - [x] Added Responsive buttons on the GUI
 - [x] Designed News Article Scrapper
 - [x] Designed YahooFinance Scrapper
 - [x] Designed Data Visualization Tools
-- [x] Designed a dummy file to test HeatMaps for the scrapped results[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/Dummy%20HeatMap.png) 
-- [x] Our Latest Wiki Page [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/wiki)
-- [x] Link GUI to Scrapper
-- [ ] Wrap Up
-- [ ] Code Cleanup
+- [x] Designed HeatMaps for the scrapped results[(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/blob/master/Design%20Documents/images/Dummy%20HeatMap.png) 
+- [x] Our Journey in a Few Wiki Pages [(Link)](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/wiki)
 
-See the [open issues](https://github.com/comp195/senior-project-spring-2022-adk-investment-terminal/issues) for a full list of known issues.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
